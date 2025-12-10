@@ -76,14 +76,5 @@
           )
         )))
 
-  (defn solve-machine 
-    ([machine curmax]
-      (let [ss (ir-state-space!  (b->ir (generate-machine (machine->constraints machine curmax))))
-            op (.findTransition (.getRoot ss) "$setup_constants" [])
-            constants (when op (.getConstantValues  (.getDestination op) FORMULA-EXPANSION))
-            res (when constants (parse-long (.getValue (val (first (filter (fn [x] (= "res" (.getCode (key x)))) xx))))))]
-        (.kill ss)
-          res)))
-
 (reduce + (map solve-machine machines))
 
