@@ -5,5 +5,6 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/data.priority-map "1.2.0"]
+                 [org.clojars.pkoerner/lisb "0.0.6"]
                  ]
   #_#_:repl-options {:init-ns aoc25.core})
